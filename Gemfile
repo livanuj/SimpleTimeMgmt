@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.3.3'
-
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -11,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use mysql as the database for Active Record
-gem 'pg', '0.17.1'
+gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -41,9 +39,6 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-
-  gem 'mysql2', '>= 0.3.18', '< 0.5'
-
 end
 
 group :development do
@@ -67,12 +62,5 @@ gem 'coffee-script-source', '1.8.0'
 gem 'pundit'
 
 gem 'cancan'
-
-group :production do
-	gem 'pg', '0.17.1'
-	gem 'rails_12factor', '0.0.2'
-
-end
-
 
 #gem "font-awesome-rails"
