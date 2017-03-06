@@ -1,0 +1,14 @@
+<%= simple_form_for(@work) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :issue %>
+    <%= f.input :date %>
+    <%= f.input :hour %>
+    <%= f.input :description %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
