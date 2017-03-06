@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.3.3'
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -62,5 +64,12 @@ gem 'coffee-script-source', '1.8.0'
 gem 'pundit'
 
 gem 'cancan'
+
+group :production do
+	gem 'pg', '0.17.1'
+	gem 'rails_12factor', '0.0.2'
+
+end
+
 
 #gem "font-awesome-rails"
